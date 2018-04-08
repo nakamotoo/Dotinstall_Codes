@@ -1,0 +1,46 @@
+/* ommand+k →アトム画面に分割
+セレクタ{プロパティ名：値；}
+3
+* ユニバーサルセレクタ(全ての要素に適用)
+要素名p h1 div
+#id
+.class
+4
+セエクタの並べ方
+a,b 両方適用
+a b aの中の全てのbに適用
+a > b  aの直下にあるbに適用
+a+b aの次にあるb要素に適用
+ab aかつbの要素に適用 p.class名 など
+5
+属性セレクタ
+a[title]{color:skyblue;} aタグのうちtitle属性があるものに適用
+a[href="http://google.com"]{color:orange;} aタグのうちhref属性の値がgoogleのもの
+a[class~="search"]{color:violet;} aタグでclassの値(linkとsearch)のうちsearchが含まれるもの
+inputタグでもよくこういうのを使う！
+6
+セレクタ
+擬似クラス　ある要素の状態を指定
+ul  li:first-child {color:skyblue;}
+
+a:link{} 未訪問のリンク
+a:visited{}　訪問済みのリンク
+a:hover{} カーソルが乗った時
+a:active{}　クリックした時
+cssの優先順位から、この順番にしないとおかしくなる
+input:focus{background:skyblue;} inputにフォーカスが当たった時
+7
+擬似要素　ある要素の一部を指定
+
+ */
+
+/* a[title]{color:red;} */
+/* a[href="http://google.com"]{color:orange;}
+a[class~="search"]{color:violet;} */
+
+ul  li:first-child {color:skyblue;}
+a:link{color:violet;}
+a:visited{color:orange;}
+a:hover{color:pink;}
+a:active{color:red;}
+input:focus{background:skyblue;}

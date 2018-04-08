@@ -1,0 +1,51 @@
+/* ommand+k →アトム画面に分割
+セレクタ{プロパティ名：値；}
+
+14
+文字textに関するプロパティ
+ color:orange;
+ font-size;10px
+ font-family:Arial,Helvetica;
+ font-weight:bold/normal
+ text-align: right/center/left
+ text-decoration: underline/ line-through打ち消し線/none
+ 15
+ list
+  listの前のマーカーを変えるプロパティ
+  list-style-type:disc黒丸/circle白丸/square四角/decimal番号/lower-alphaアルファべット
+  list-style-image: url('ファイル名'); 画像にできる
+  list-style-position: inside/outside
+
+  list-style:順不同省略可で一気に！！
+16
+  cursor
+  .help{cursor:help;}はてな
+  .dragme{cursor:move;}ドラッグするやつ
+  .clickme{cursor:pointer;}指
+  .smile{cursor:url('smile.png'),auto;}　画像と同時に画像ない時の代替も指定する必要あり
+17
+  background
+  body{
+    background-color:silver;
+    background-image:url('s1.jpg'); このままだと何回も敷き詰められる
+    background-repeat:no-repeat/repeat-x; 敷き詰める方向など
+    background-position:10px 10px; x方向に10,y方向に10
+    background-position:top center; 上の中央
+    background-attachment:scroll;　スコロールに伴って逃げる
+    background-attachment:fixed; スコロールしてもその位置固定　逃げない
+  }
+  以上のプッロパティは、以下のように一気に！！順不同省略可
+    body{
+      background: silver url('s1.jpg') no-repeat  fixed;
+    }
+
+  */
+
+body{
+  /* background-color:silver;
+  background-image:url('s1.jpg');
+  background-repeat:no-repeat;
+  /* background-attachment:scroll; */
+  /* background-attachment:fixed; */
+ background: silver url('s1.jpg') no-repeat  fixed;
+}

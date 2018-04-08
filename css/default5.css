@@ -1,0 +1,71 @@
+/* ommand+k →アトム画面に分割
+セレクタ{プロパティ名：値；}
+
+18
+displayで要素の配置
+  ブロックボックス　上から詰められていく
+  ブロックレベル要素h1 pなど　
+  インラインボックス　左から詰められていく widthやheightは無効
+  インラインレベル要素　span a など
+  display
+    block ブロックボックスにする
+    inline　インラインボックスにする
+    list-item　listみたいに左にマーカーを置く
+    inline-block inlineみたいに左づめになるblock widthやheightは有効
+    none
+  display:inline-block;
+  display:none;　消える
+19 display:table;
+.container{
+  display:table;
+}
+.box{
+  display:table-cell;
+}
+.row{
+  display:table-row;
+20
+  position
+    static
+    relative 左上からずらす
+    fixed スクロールしても逃げない
+    absolute　親要素に対する位置 親がstaticかrelativeで変わる
+    親がstatic　ブラウザ基準　relative 親基準
+  例
+  position:relative;
+  top:10px;
+  left:10px;
+21
+z-index
+ positionがstatic以外に有効
+ 値が大きいほど上に来る
+overflow　ボックス要素ないの文字が多すぎるとき
+  visible
+  hidden はみ出た部分削除
+  scroll スクロール領域
+22
+  line-height 行ボックスの高さを規定
+    line-height:1.5 フォオントサイズの1.5倍の行間
+  vertical-align 画像などインラインレベル要素を配置する時に使う
+    baseline フォントのべースライン
+    top　行ボックスの上
+    bottom　行ボックスの下
+    middle　英小文字の中央を通る線
+    ?px　ベースラインからの距離
+    ?em　
+23
+  float 通常の配置から切り離す　floatされたらブロックボックスになるから幅をつける
+  clear  ブロックレベル要素のみに適用 floatしたものの下に配置したい
+  右に float した要素の下に配置するには「clear: right;」、左に float した場合には「clear: left;」、両方に float していた場合には「clear: both;」
+  */
+
+p,h1,h2,img{
+  border:1px solid #ddd;
+}
+img{
+  float:right;
+  width:300px;
+}
+h2{
+  clear:right;
+}
