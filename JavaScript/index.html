@@ -1,0 +1,145 @@
+<DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta  charset="utf-8">
+  <title>JavaScriptの練習</title>
+  <style >
+    .myStyle{
+      font-weight:bold;
+      border:1px solid gray;
+    }
+  </style>
+</head>
+<!--
+17.
+オブジェクト
+    名前と値がグループ化されたもの
+    それぞれの
+    ペアをプロパティと呼ぶ
+    各プロパティ同士はカンマで区切る
+例
+var user={
+  email:"nakamoto@gmail.com",
+  score: 80
+};
+呼び出し方は二つ
+console.log(user["email"]);
+console.log(user.email);
+書き換えも可能
+user.score=100;
+18.
+オブジェクトはプロパティの値に関数を持つことが可能
+その関数をオブジェクトのメソッドと呼ぶ
+var user={
+  email:"nakamoto@gmail.com",
+  score: 80,
+  greet: function(name){
+  console.log("hello, "+name);}
+};
+user.greet("Tom");
+メソッドの中ではthisを活用しよう！
+var user={
+  email:"nakamoto@gmail.com",
+  greet: function(name){
+  console.log("hello, "+name+this.email);}
+};
+19.
+組み込みオブジェクト
+-String 文字列
+-Array 配列
+-Math 数学
+-Date 日付
+String
+var s= new String("nakamoto"); //文字列オブジェクト＜=＞文字列リテラル（var s="nakamoto"など）
+//sに対して色々なメソッドやプロパティが使えるようになった！
+console.log(s.length); //文字数を表すプロパティ
+console.log(s.replace("t","T")); //置換をするプロパティ
+console.log(s.substr(1,4));  //部分文字列を返すプロパティ akamが帰ってくる
+どのようなプロパティやメソッドが使えるかは mdn のサイトへ！！
+20.
+Array
+var a=new Array(100,300,200);
+console.log(a.length); //要素の個数
+//要素の追加 unshift 先頭から push 末尾から
+//要素の除去 shift 先頭から pop 末尾から
+//splice 途中から追加削除
+a.push(500);
+console.log(a[3]);
+a.splice(1,2); //添え字１の要素から2つの要素を削除
+console.log(a);
+a.splice(1,0,800,1000); //添え字１から０個削除して800と1000を追加
+console.log(a);
+21
+Math
+newする必要なし！直接使える。
+console.log(Math.PI);  //円周率
+console.log(Math.ceil(5.32));  //切り上げ
+console.log(Math.floor(5.32)); //切り捨て
+console.log(Math.round(5.32)); //四捨五入
+console.log(Math.random()); //0-1未満の実数をランダムで
+Date
+var d = new Date(); //現在時刻
+//var d = new Date(1998,7,20,12,00,30); 1998年8月20日12時0分30秒 月は0から始まることに注意！
+console.log(d.getFullYear()); //年を取得
+console.log(d.getMonth()); //月を取得 3月だったら2が呼び出される
+console.log(d.getTime()); //1970/1/1からの経過ミリ秒
+22.
+console.dir(オブジェクト名);  オブジェクトのプロパティを返す
+//console.dir(window);
+console.log(window.outerHeight); //今のブラウザの高さ
+window.location.href='http://dotinstall.com'; //ページを別のurlへ飛ばす
+window.document 一番よく使う！！！今開いているページ "window."は省略可能
+document にアクセスするための色々な命令を
+document object model（DOM）と呼ぶ
+DOMはブラウザによってまちまち
+23
+DOMを操作
+jsからhtmlをいじるときはidを振っておくと便利！
+<body>
+  <h1>見出し</h1>
+  <p id="msg">こんにちは！</p>
+  <script>
+    var e = document.getElementById('msg');
+    e.textContent = 'hello';
+    e.style.color="red";
+    e.className = 'myStyle'; //styleタグで事前に指定した.myStyle{}が適用される
+    //body要素の中にp要素を追加してさらにその中にtextを追加したい
+    var greet = document.createElement('p'), //要素追加
+        text = document.createTextNode('hello world')  //text追加
+    document.body.appendChild(greet).appendChild(text); //子要素として追加
+  </script>
+</body>
+24.
+イベントを設定addEventListener 第一引数 操作 第二引数 関数
+//buttonをクリックするたびに以上の操作を繰り返したい！！
+   document.getElementById('add').addEventListener('click',function(){
+      var greet = document.createElement('p'),
+          text = document.createTextNode('hello world') ;
+          document.body.appendChild(greet).appendChild(text);
+        })
+-->
+
+
+<body>
+  <h1>見出し</h1>
+  <p id="msg">こんにちは！</p>
+  <button id="add">Click!</button>
+  <script>
+    var e = document.getElementById('msg');
+    e.textContent = 'hello';
+    e.style.color="red";
+    e.className = 'myStyle';
+    //styleタグで事前に指定した.myStyle{}が適用される
+    //body要素の中にp要素を追加してさらにその中にtextを追加したい
+    var greet = document.createElement('p'), //要素追加
+        text = document.createTextNode('hello world');  //text追加
+    document.body.appendChild(greet).appendChild(text); //子要素として追加
+//buttonをクリックするたびに以上の操作を繰り返したい！！
+   document.getElementById('add').addEventListener('click',function(){
+      var greet = document.createElement('p'),
+          text = document.createTextNode('hello world') ;
+          document.body.appendChild(greet).appendChild(text);
+        })
+  </script>
+</body>
+</html>
