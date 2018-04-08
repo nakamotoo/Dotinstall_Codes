@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <title>CSS Layout Practice</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        Header
+      </div>
+    </header>
+    <main>
+      <div class="container">
+        <div id="left">left</div>
+        <div id="right">right</div>
+      </div>
+      <!-- containerの両側のmainの背景色がfloatによりたか0になって表示されないのを防ぐ -->
+      <div style="clear:both;"></div>
+    </main>
+    <footer>
+      <div class="container">
+        footer
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,79 @@
+/*
+2
+User Agent Stylesheet ブラウザ元からのsheet
+各社違う同じように見えるための調整
+-reset.css（全てリセット）
+html5doctorから引っ張ってくる
+-normalize.css (あるてど残す)
+ググったらファイルダウンロードできる
+
+上記二つはhtmlで自分のcssより先に読み込む！
+3
+Developer tool
+ショートカット　command option i
+4
+ワンカラムレイアウト
+.container{
+  width:500px;
+  margin:0 auto;
+}
+header main footerの三層構造は
+footerの色を指定せず、bodyの背景色をfooterの色にすれば下まで伸びる
+5
+背景に横幅いっぱいにはいち
+アイキャッチ画像
+headerとmainの間に<div id="eyecatch">を作る
+#eyecatch{
+  background: url('eyecatch.jpg') no-repeat;
+  background-size:cover;
+  background-position:50% 50%;　中心を表示したい時
+  height:100px;
+}
+6
+2カラムレイアウト
+mainのcontainerに
+<div id="left">left</div>
+<div id="right">right</div>
+追加して
+#left #rightの背景色、float,widthを設定
+ただ
+containerの両側のmainの背景色がfloatによりたか0になって表示されないのを防ぐ ため
+<div style="clear:both;"></div>
+をcontainerの外に追加
+さらにfooterの回り込み防止策として
+footer{clear:both;}
+にする。
+
+*/
+
+body {
+  margin: 0;
+  /* background:silver; */
+}
+.container{
+  width:500px;
+  margin:0 auto;
+  /* background:pink; */
+}
+header{
+  background:tomato;
+}
+main{
+  background:skyblue;
+}
+#left{
+  background:limegreen;
+  float:left;
+  width:200px;
+}
+#right{
+  background:lightgreen;
+  float:left;
+  width:300px;
+
+}
+
+footer{
+  clear:both;  /* 背景色の回り込み解除 */
+  background:silver;
+}

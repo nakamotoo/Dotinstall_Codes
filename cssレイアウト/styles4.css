@@ -1,0 +1,56 @@
+/*
+13
+positionプロパティ
+画像の右上に値段を表示したい
+流れ：画像と値段を含む親要素を作り、relativeに
+値段はabsoluteに
+親{
+position:relative;
+display:inline-block;
+}
+値段{
+position:absolute;
+top:-5; ちょっと飛び出してくれる！
+right:-5;
+font-size:10px;
+font-weight:bold;
+background:red;
+}
+
+*/
+
+body {
+  margin: 0;
+  /* background:silver; */
+}
+.container{
+  width:500px;
+  margin:0 auto;
+  /* background:pink; */
+}
+header{
+  background:tomato;
+}
+main .product{
+position:relative;
+display:inline-block;
+}
+main .price{
+position:absolute;
+top:0;
+right:0;
+font-size:10px;
+font-weight:bold;
+background:red;
+
+}
+
+main{
+  background:skyblue;
+  padding:15px 0;
+}
+
+footer{
+  clear:both;  /* 背景色の回り込み解除 */
+  background:silver;
+}

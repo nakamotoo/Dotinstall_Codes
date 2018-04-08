@@ -1,0 +1,90 @@
+/*
+7
+clearfix
+前回のようにmainの高さを0にしないためにdivを作るのは面倒
+htmlでcontainerを  <div class="container clearfix"> とする
+cssで
+.clearfix::after{
+  content:'';
+  display:block;
+  clear:both;
+}
+とすれば良い
+さらにclearfixよりさらに簡単な実装方法はclear
+<div class="container clear">
+.clearfix::after{
+  content:'';
+  display:block;
+  clear:both;
+}
+.clear{
+  overflow:hidden;
+}
+8
+カラム（右左のdiv)の間に余白をつけたい
+方法1
+leftの幅を狭めてmargin-rightをつける
+方法2
+rightのfloatをrightにしてleftの幅を縮める
+さらに
+left,rightにpaddingをつけたい場合
+#left, #right{
+  padding:10px;
+  box-sizing:border-box;
+}
+9.
+3カラム
+
+*/
+
+body {
+  margin: 0;
+  /* background:silver; */
+}
+.container{
+  width:500px;
+  margin:0 auto;
+  /* background:pink; */
+}
+header{
+  background:tomato;
+}
+main{
+  background:skyblue;
+}
+#left,#right,#center{
+  padding:10px;
+  box-sizing:border-box;
+}
+
+#left{
+  background:limegreen;
+  float:left;
+  width: 100px;
+  margin-right: 10px;
+}
+#center{
+  background:seagreen;
+  float:left;
+  width: 280px;
+  /* margin-right: 10px; */
+
+}
+#right{
+  background:lightgreen;
+  float: right;
+  width: 100px;
+}
+.clearfix::after{
+  content:'';
+  display:block;
+  clear:both;
+}
+.clear{
+  overflow:hidden;
+}
+
+footer{
+  clear:both;  /* 背景色の回り込み解除 */
+  background:silver;
+}

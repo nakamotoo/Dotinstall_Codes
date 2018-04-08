@@ -1,0 +1,86 @@
+/*
+13
+positionプロパティ
+画像の右上に値段を表示したい
+流れ：画像と値段を含む親要素を作り、relativeに
+値段はabsoluteに
+親{
+position:relative;
+display:inline-block;
+}
+値段{
+position:absolute;
+top:-5; ちょっと飛び出してくれる！
+right:-5;
+font-size:10px;
+font-weight:bold;
+background:red;
+}
+14
+15
+画像付きリスト
+liの上下間隔はpaddingとmarginのbottomを組み合わせる
+ul#lessons li{
+  padding-bottom:10px; borederの上の空白
+  margin-bottom:15px;　borderの下の空白
+  border-bottom:1px solid rgba(255,255,255,0.4);
+}
+特に最後のボーダーや余白が入らない場合は
+ul#lessons li:not(:last-child){}に適用すれば良い。
+*/
+
+body {
+  margin: 0;
+  /* background:silver; */
+}
+.container{
+  width:500px;
+  margin:0 auto;
+  /* background:pink; */
+}
+header{
+  background:tomato;
+}
+
+main{
+  background:skyblue;
+padding: 15px 0;
+}
+ul#lessons{
+  margin:0;
+  padding:0;
+  list-style-type:none;
+}
+ul#lessons h2, ul#lessons p{
+  margin:0;
+  padding:0;
+  font-size:14px;
+}
+ul#lessons .lesson_img{
+  float:left;
+  width:50px;
+}
+ul#lessons .lesson_info{
+  float:right;
+  width:440px;
+}
+ul#lessons li{
+  overflow:hidden;
+}
+ul#lessons li:not(:last-child){
+  padding-bottom:10px;
+  margin-bottom:15px;
+  border-bottom:1px solid rgba(255,255,255,0.4);
+}
+
+
+
+
+
+
+
+
+footer{
+  clear:both;  /* 背景色の回り込み解除 */
+  background:silver;
+}

@@ -1,0 +1,63 @@
+/*
+10
+今まではブラウザの拡大縮小によらず固定幅だった
+以下可変幅の実装
+containerを作らずに
+角divのwidthを％で決める
+また
+どれかを固定してどれかを可変にする場合
+左右はwidthを決めてfloat
+真ん中はwidth決めず、左右のマージンを設定し、はめ込む
+注意
+htmlのスクリプトでfloatする要素はそうでない要素より先に書かないといけない
+
+*/
+
+body {
+  margin: 0;
+  /* background:silver; */
+}
+.container{
+  width:500px;
+  margin:0 auto;
+  /* background:pink; */
+}
+header{
+  background:tomato;
+}
+main{
+  background:skyblue;
+}
+#left,#right,#center{
+
+}
+
+#left{
+  background:limegreen;
+  float:left;
+  width: 100px;
+}
+#center{
+  background:seagreen;
+  margin:0px 100px;
+  /* margin-right: 10px; */
+
+}
+#right{
+  background:lightgreen;
+  float: right;
+  width: 100px;
+}
+.clearfix::after{
+  content:'';
+  display:block;
+  clear:both;
+}
+.clear{
+  overflow:hidden;
+}
+
+footer{
+  clear:both;  /* 背景色の回り込み解除 */
+  background:silver;
+}
