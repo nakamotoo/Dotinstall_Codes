@@ -1,0 +1,39 @@
+/*
+2
+値
+  長さ　px em %
+        rem htmlに指定したfont-sizeの何倍 基準となる大きさが常に一定！
+3
+  色
+    rgba
+     red
+     green
+     blue
+     alpha(0-1)透明度
+    hsl/hsla
+      hue色相0-360
+      saturation彩度0-100%
+      lightness　明度0-100%
+      alpha 0-1
+  background:hsla(210,100%,40%,0.7);
+4.
+要素全体を透明
+opacity 0-1
+5.
+属性セレクタ
+  a[href]
+  a[href="foo"]
+  a[href~="foo"]
+  a[href^="foo"] fooから始まる
+  a[href$="foo"]fooで終わる
+  a[href*="foo"]fooが含まれる
+*/
+/* a[href^="http"]{
+  color:orange;
+} */
+/* a[href$=".com"]{
+  color:orange;
+} */
+a[href*=".co.jp"]{
+  color:orange;
+}

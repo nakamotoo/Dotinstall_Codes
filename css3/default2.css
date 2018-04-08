@@ -1,0 +1,51 @@
+/*
+18
+animation
+chromeではベンダープレフィックス必要
+div{
+  -webkit-animation-name: slidein;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 0.1s;
+  animationを繰り返させる場合
+  -webkit-animation-iteration-count: infinite;
+  さらに一回一回戻るように設定したい場合
+  -webkit-animation-direction: alternate;
+}
+@-webkit-keyframes slidein{
+0%{margin-left:100%;background:white;}
+70%{  margin-left:50%;  background:blue;}
+100%{  margin-left:0%;}
+}
+
+*/
+
+div{
+  width:50px;
+  height:50px;
+  background:skyblue;
+
+  -webkit-animation-name: slidein;
+  -webkit-animation-duration: 1s;
+  -webkit-animation-timing-function: ease;
+  -webkit-animation-delay: 0.1s;
+  /* animationを繰り返させる場合 */
+  -webkit-animation-iteration-count: infinite;
+  /* さらに一回一回戻るように設定したい場合 */
+  -webkit-animation-direction: alternate;
+}
+
+@-webkit-keyframes slidein{
+0%{
+  margin-left:100%;
+  background:white;
+}
+70%{
+  margin-left:50%;
+  background:blue;
+}
+100%{
+  margin-left:0%;
+}
+
+}

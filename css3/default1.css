@@ -1,0 +1,67 @@
+/*
+15
+transformで要素を変形
+動かすtransform:translate();
+transform:translate(20px, 40px);
+transform:translateX(20px);
+transform:translateY(40px);
+拡大縮小transform:scale();
+transform:scale(0.5,1.5); x方向0.5倍y方向1.5倍
+傾斜をかけるtransform:skew();
+transform:skew(10deg,20deg);
+回転transform:rotate();
+transform:rotate(30deg);
+  さらに回転の基準点を指定するにはtransform-origin:
+  transform-origin: 0 0;
+  transform-origin: 10% 20%;
+  transform-origin: top left;
+16
+ベンダープレフィックス
+  前回のtransformはsafariなどで使えない→caniuse.com
+  その解決策としてベンダープレフィックスを使う
+firefox   moz
+opera     o
+safari    webkit
+IE        ms
+safariの場合以下のように実装
+#box2{
+  background:orange;
+  opacity:.5;
+  -webkit-transform:rotate(30deg);
+  transform:rotate(30deg);}
+17
+transition 要素のアニメーション
+どのプロパティを対象にするか
+transition-property:all;
+変化にかかる時間
+transition-duration:2s;
+transition-timing-function:
+    - ease; 開始と終了を滑らかにする
+    - linear; 等速度
+    - ease-in; 開始がゆっくり
+    - ease-out; 終わりがゆっくり
+    - ease-in-out; 開始と終了がゆっくり
+変化が開始するまでの時間
+transition-delay:0.8s;
+
+以上全てはまとめて指定できる
+順不同だが、時間はdurationが先、delayがあと
+transition:all 2s ease 0.8s;
+
+*/
+
+div{
+  width:100px;
+  height:50px;
+  background:skyblue;
+  transition-property:all;
+  transition-duration:2s;
+  transition-timing-function:ease-in-out;
+  transition-delay:0.3s;
+
+}
+div:hover{
+  width:200px;
+  height:50px;
+  background:blue;
+}
